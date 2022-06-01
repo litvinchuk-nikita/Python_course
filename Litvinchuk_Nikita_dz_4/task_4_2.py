@@ -68,9 +68,9 @@ def currency_rates_1(code_volute):
     while inx < len(value_list):
         my_dict[char_code_list[inx]] = value_list[inx]
         inx += 1
-    print(Decimal(my_dict.get(str(code_volute).upper())), ',', date_value)
+    return f"{Decimal(my_dict.get(str(code_volute).upper()))}, {date_value}"
 
 
 if __name__ == '__main__':
-    currency_rates_1('eur')
-    currency_rates_1('usd')
+    print(currency_rates_1('eur'))
+    print(currency_rates_1('usd'))
