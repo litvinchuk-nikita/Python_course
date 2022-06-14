@@ -1,4 +1,4 @@
-# Написать функцию email_parse(<email_address>),
+# Задание №1. Написать функцию email_parse(<email_address>),
 # которая при помощи регулярного выражения извлекает имя пользователя
 # и почтовый домен из email адреса и возвращает их в виде словаря.
 # Если адрес не валиден, выбросить исключение ValueError.
@@ -17,7 +17,7 @@ import re
 
 
 def email_parse(email_address):
-    pattern = re.compile(r'\w+@\w+\.\w+')
+    pattern = re.compile(r'\w+@[a-z\d]+\.[a-z\d]+')
     if re.findall(pattern, email_address):
         val_1, val_2 = email_address.split('@')
         return {'username': val_1, 'domain': val_2}
